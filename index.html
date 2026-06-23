@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/bktcg_logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bktcg</title>
+    <title>BKTCG Show</title>
   </head>
+
   <body>
+    <form name="contact" data-netlify="true" netlify hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
