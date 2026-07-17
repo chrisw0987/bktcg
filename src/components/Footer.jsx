@@ -1,4 +1,5 @@
 import { Smartphone, Mail, MapPin } from "lucide-react";
+import logo from '../assets/MordecAI_logo.png';
 
 function Footer() {
   return (
@@ -71,17 +72,22 @@ function Footer() {
             </p>
 
             {/* Powered By */}
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-white/50">
-                Powered By
-              </span>
+            <a
+            href="https://getmordecai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3 self-start border border-white/10 bg-white/5 px-4 py-2 transition hover:border-[#E3AE4F] hover:bg-white/10"
+          >
+            <span className="text-sm text-white/50 transition group-hover:text-white">
+              Developed by
+            </span>
 
-              <img
-                src="/MordecAI_logo.png"
-                alt="MordecAI Logo"
-                className="h-8 w-auto"
-              />
-            </div>
+            <img
+              src={logo}
+              alt="MordecAI"
+              className="h-7 w-auto transition group-hover:scale-105"
+            />
+          </a>
 
           </div>
         </div>
