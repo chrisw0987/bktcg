@@ -79,7 +79,7 @@ function NextEvent() {
               </h3>
 
               <p className="mt-3 text-lg font-medium text-[#2A1E68]">
-                {nextEvent.location} • {nextEvent.neighborhood}, NY
+                {nextEvent.location} • {nextEvent.address}, NY
               </p>
 
               <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

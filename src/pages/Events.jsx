@@ -163,9 +163,9 @@ function Events() {
                         </div>
 
                         <div className="rounded-2xl bg-white p-5 shadow">
-                          <p className="font-black text-[#0B1D5A]">Area</p>
+                          <p className="font-black text-[#0B1D5A]">Address</p>
                           <p className="mt-1 text-[#2A1E68]/75">
-                            {event.neighborhood}
+                            {event.address}
                           </p>
                         </div>
                       </div>

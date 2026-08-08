@@ -5,7 +5,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const ticketLink =
-    "https://www.eventeny.com/events/bktcgshow-30309/?srsltid=AfmBOorm_xPUkg0unAn_ITQN30c2Xz1A4noied-G0jyMIwCzVZ1v0KBd";
+    "https://www.ontreasure.com/u/bktcgshow";
 
   function closeMenu() {
     setMenuOpen(false);

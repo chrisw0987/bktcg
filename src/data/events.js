@@ -82,7 +82,7 @@ const events = [
       "https://maps.apple/p/Ixow3mGqEc2_4s",
 
     ticketTypes: [
-      "General Admission — tickets starting at $5",
+      "General Admission - $5",
       "Early Bird Admission - $10",
       "Extra Vendor Pass - $5"
     ],
