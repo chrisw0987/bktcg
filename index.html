@@ -2,14 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/bktcg_logo.png" />
+
+    <link rel="icon" type="image/png" href="/bktcg-logo.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BKTCG Show</title>
+
+    <meta
+      name="description"
+      content="BKTCG Show brings Brooklyn's trading card community together for buying, selling, trading, and collecting."
+    />
+
+    <meta name="theme-color" content="#2A1E68" />
+
+    <title>BKTCG Show | Brooklyn Trading Card Show</title>
   </head>
 
   <body>
-    <form name="contact" data-netlify="true" netlify hidden>
-      <input type="hidden" name="form-name" value="contact" />
+    <!-- Hidden form for Netlify form detection -->
+    <form
+      name="contact"
+      data-netlify="true"
+      hidden
+    >
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
@@ -17,7 +31,9 @@
       <textarea name="message"></textarea>
     </form>
 
+    <!-- React Application -->
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
