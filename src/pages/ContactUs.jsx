@@ -1,13 +1,51 @@
+import { useNavigate } from "react-router-dom";
+
+import gmailLogo from "../assets/gmail_logo.svg";
+import instagramLogo from "../assets/ig_logo.svg";
+import tiktokLogo from "../assets/tiktok_logo.svg";
+
 function ContactUs() {
+  const navigate = useNavigate();
+
   const inputClasses =
     "rounded-xl border border-white/15 bg-white/10 px-6 py-5 text-white outline-none backdrop-blur-md placeholder:text-white/50 transition focus:border-[#FFA500] focus:bg-white/15";
 
+  // Submit form to Netlify
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
+        form.reset();
+        navigate("/thank-you");
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <main className="relative overflow-hidden bg-gradient-to-br from-[#0B1D5A] via-[#2A1E68] to-[#5B2DB8] px-6 py-20 text-white">
+      {/* Background Glow */}
       <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#FFA500]/10 blur-[120px]" />
       <div className="absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-[#4FCBFF]/10 blur-[120px]" />
 
       <section className="relative mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
+        {/* Left: Contact Form */}
         <div>
           <p className="font-bold uppercase tracking-[0.35em] text-[#FFA500]">
             Get In Touch
@@ -22,9 +60,10 @@ function ContactUs() {
             name="contact"
             method="POST"
             data-netlify="true"
-            action="/"
+            onSubmit={handleSubmit}
             className="mt-14 space-y-6"
           >
+            {/* Required for Netlify Forms */}
             <input type="hidden" name="form-name" value="contact" />
 
             <div className="grid gap-6 md:grid-cols-2">
@@ -77,6 +116,7 @@ function ContactUs() {
           </form>
         </div>
 
+        {/* Right: Contact Information */}
         <div>
           <p className="font-bold uppercase tracking-[0.35em] text-[#FFA500]">
             Information
@@ -88,31 +128,110 @@ function ContactUs() {
           </h2>
 
           <div className="mt-14 space-y-4">
+            {/* Email */}
             <div className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-xl backdrop-blur-md">
-              <h3 className="text-xl font-black text-[#FFA500]">
-                Event Venue
-              </h3>
-              <p className="mt-2 text-[#4FCBFF]">Brooklyn College</p>
-              <p className="text-sm text-white/70">
-                2900 Bedford Ave, Brooklyn, NY
-              </p>
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10">
+                  <img
+                    src={gmailLogo}
+                    alt="Email"
+                    className="h-7 w-7 object-contain"
+                  />
+                </div>
+
+                <div className="flex-1">
+                  <h3 className="text-xl font-black text-[#FFA500]">
+                    Email
+                  </h3>
+
+                  <p className="mt-1 text-sm text-white/70">
+                    Send us a message directly.
+                  </p>
+
+                  <p className="mt-2 font-semibold text-[#4FCBFF]">
+                    info@bktcgshow.com
+                  </p>
+
+                  <a
+                    href="mailto:info@bktcgshow.com"
+                    className="mt-4 inline-block rounded-xl bg-[#2A1E68] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#35267F]"
+                  >
+                    Send Email
+                  </a>
+                </div>
+              </div>
             </div>
 
+            {/* Instagram */}
             <div className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-xl backdrop-blur-md">
-              <h3 className="text-xl font-black text-[#FFA500]">
-                Social Media
-              </h3>
-              <p className="mt-2 text-sm text-white/70">
-                Reach out on Instagram
-              </p>
-              <p className="text-[#4FCBFF]">@bktcgshow</p>
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10">
+                  <img
+                    src={instagramLogo}
+                    alt="Instagram"
+                    className="h-7 w-7 object-contain"
+                  />
+                </div>
+
+                <div className="flex-1">
+                  <h3 className="text-xl font-black text-[#FFA500]">
+                    Instagram
+                  </h3>
+
+                  <p className="mt-1 text-sm text-white/70">
+                    Follow show updates, announcements, and event posts.
+                  </p>
+
+                  <p className="mt-2 font-semibold text-[#4FCBFF]">
+                    @bktcgshow
+                  </p>
+
+                  <a
+                    href="https://www.instagram.com/bktcgshow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block rounded-xl bg-[#2A1E68] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#35267F]"
+                  >
+                    Open Instagram
+                  </a>
+                </div>
+              </div>
             </div>
 
+            {/* TikTok */}
             <div className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-xl backdrop-blur-md">
-              <h3 className="text-xl font-black text-[#FFA500]">Email</h3>
-              <p className="mt-2 text-sm text-white/70">
-                Contact us at: info@bktcgshow.com
-              </p>
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10">
+                  <img
+                    src={tiktokLogo}
+                    alt="TikTok"
+                    className="h-7 w-7 object-contain"
+                  />
+                </div>
+
+                <div className="flex-1">
+                  <h3 className="text-xl font-black text-[#FFA500]">
+                    TikTok
+                  </h3>
+
+                  <p className="mt-1 text-sm text-white/70">
+                    Check out event clips and BKTCG content.
+                  </p>
+
+                  <p className="mt-2 font-semibold text-[#4FCBFF]">
+                    @bktcgshow
+                  </p>
+
+                  <a
+                    href="https://www.tiktok.com/@bktcgshow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block rounded-xl bg-[#2A1E68] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#35267F]"
+                  >
+                    Open TikTok
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

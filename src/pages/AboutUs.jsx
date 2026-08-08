@@ -2,25 +2,25 @@ function AboutUs() {
   const values = [
     {
       title: "Community First",
-      text: "BKTCG Show is built to bring local collectors, vendors, players, and families together in one welcoming space.",
+      text: "BKTCG Show brings collectors, vendors, players, and families together through a shared love of the hobby.",
     },
     {
-      title: "Safe Trading",
-      text: "Dedicated trading zones help collectors connect, make deals, and discover new cards in a safer in-person environment.",
+      title: "Trade & Connect",
+      text: "The show creates space for collectors to meet, trade, make deals, and discover cards in person.",
     },
     {
       title: "For Every Collector",
-      text: "From competitive players to casual fans and young kids, the show is designed for all ages and experience levels.",
+      text: "From longtime collectors to kids discovering their first cards, BKTCG Show is built to welcome every experience level.",
     },
   ];
 
   const highlights = [
-    "10,000 sq. ft. venue",
-    "140–150+ vendor tables",
+    "Brooklyn-based events",
     "Pokémon & One Piece focused",
-    "Rare singles & graded slabs",
-    "Vintage sealed packs",
-    "Custom card merchandise",
+    "Large vendor floors",
+    "Singles & graded slabs",
+    "Sealed products",
+    "Collector community",
   ];
 
   return (
@@ -35,12 +35,12 @@ function AboutUs() {
           </p>
 
           <h1 className="mt-4 text-4xl font-black md:text-6xl">
-            Brooklyn&apos;s Premier Trading Card Gathering
+            Brooklyn&apos;s Trading Card Community
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/80">
-            BKTCG Show is a large-scale community event dedicated to trading
-            card game enthusiasts, collectors, vendors, players, and families.
+            BKTCG Show is a Brooklyn-based trading card event built around
+            collecting, community, and bringing people in the hobby together.
           </p>
         </div>
       </section>
@@ -60,10 +60,10 @@ function AboutUs() {
 
           <p className="text-lg leading-relaxed text-[#2A1E68]/75">
             Our goal is to create an inclusive, high-energy environment where
-            local collectors can connect, trade safely, and celebrate card
-            culture. Whether you&apos;re hunting for rare Pokémon cards, looking
-            for One Piece singles, or just discovering the hobby, BKTCG Show is
-            designed to make every collector feel welcome.
+            collectors can shop, trade, connect, and celebrate card culture.
+            Whether you&apos;re hunting for Pokémon, searching for One Piece
+            cards, meeting vendors, or just discovering the hobby, BKTCG Show
+            is designed to make the experience welcoming and exciting.
           </p>
         </div>
       </section>
@@ -100,21 +100,22 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Event Scale */}
+      {/* What To Expect */}
       <section className="bg-white px-6 py-20 text-[#2A1E68]">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="font-bold uppercase tracking-widest text-[#FFA500]">
-              Event Scale
+              The BKTCG Experience
             </p>
 
             <h2 className="mt-3 text-3xl font-black md:text-5xl">
-              A Major TCG Event In Brooklyn
+              What You&apos;ll Find At Our Shows
             </h2>
 
             <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-[#2A1E68]/75">
-              The first official BKTCG Show launches on July 19, 2026 at
-              Brooklyn College, located at 2900 Bedford Ave in Flatbush.
+              BKTCG events bring together vendors, collectors, and card fans
+              from across the community for a full day centered around the
+              hobby.
             </p>
           </div>
 
@@ -122,7 +123,7 @@ function AboutUs() {
             {highlights.map((item) => (
               <div
                 key={item}
-                className="rounded-2xl border-2 border-[#4FCBFF]/20 bg-[#F8F7FF] p-6 text-center font-bold shadow-lg transition hover:-translate-y-1 hover:border-[#4FCBFF]"
+                className="rounded-2xl border-2 border-[#4FCBFF]/20 bg-[#F8F7FF] p-6 text-center font-bold shadow-lg transition hover:-translate-y-1 hover:border-[#FFA500]"
               >
                 {item}
               </div>
@@ -138,7 +139,7 @@ function AboutUs() {
         </h2>
 
         <p className="mx-auto mt-4 max-w-2xl text-lg font-semibold">
-          Collect, trade, shop, and connect at BKTCG Show.
+          Buy, sell, trade, collect, and connect at BKTCG Show.
         </p>
       </section>
     </main>

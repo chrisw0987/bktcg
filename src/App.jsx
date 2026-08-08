@@ -6,6 +6,7 @@ import AboutUs from "./pages/AboutUs";
 import Events from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
+import ThankYou from "./pages/ThankYou";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/events" element={<Events/>} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
 
       <Footer />

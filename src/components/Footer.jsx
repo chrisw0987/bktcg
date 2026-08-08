@@ -1,5 +1,8 @@
 import { Smartphone, Mail, MapPin } from "lucide-react";
 import logo from '../assets/MordecAI_logo.png';
+import email_logo from '../assets/gmail_logo.svg';
+import ig_logo from '../assets/ig_logo.svg';
+import tiktok_logo from '../assets/tiktok_logo.svg';
 
 function Footer() {
   return (
@@ -44,18 +47,18 @@ function Footer() {
             <div className="mt-4 flex flex-col gap-4 text-white/70">
 
               <div className="flex items-center gap-3">
-                <Smartphone size={18} className="text-[#4FCBFF]" />
-                <span>Our Instagram: @bktcgshow</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-[#4FCBFF]" />
+                <img src={email_logo} className="w-7 h-7"></img>
                 <span>info@bktcgshow.com</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <MapPin size={18} className="text-[#4FCBFF]" />
-                <span>Brooklyn, NY</span>
+                <img src={ig_logo} className="w-7 h-7"></img>
+                <span>@bktcgshow</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <img src={tiktok_logo} className="w-7 h-7"></img>
+                <span>@bktcgshow</span>
               </div>
 
             </div>
