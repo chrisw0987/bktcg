@@ -153,7 +153,7 @@ function ContactUs() {
                   </p>
 
                   <a
-                    href="mailto:info@bktcgshow.com"
+                    href="mailto:bktcgshow@gmail.com"
                     className="mt-4 inline-block rounded-xl bg-[#2A1E68] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#35267F]"
                   >
                     Send Email
