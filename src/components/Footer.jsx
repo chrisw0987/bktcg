@@ -48,7 +48,7 @@ function Footer() {
 
               <div className="flex items-center gap-3">
                 <img src={email_logo} className="w-7 h-7"></img>
-                <span>info@bktcgshow.com</span>
+                <span>bktcgshow@gmail.com</span>
               </div>
 
               <div className="flex items-center gap-3">

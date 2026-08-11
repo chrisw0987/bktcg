@@ -149,7 +149,7 @@ function ContactUs() {
                   </p>
 
                   <p className="mt-2 font-semibold text-[#4FCBFF]">
-                    info@bktcgshow.com
+                    bktcgshow@gmail.com
                   </p>
 
                   <a
