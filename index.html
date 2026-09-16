@@ -3,37 +3,142 @@
   <head>
     <meta charset="UTF-8" />
 
-    <link rel="icon" type="image/png" href="/bktcg-logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/bktcg-logo.png"
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
     <meta
       name="description"
       content="BKTCG Show brings Brooklyn's trading card community together for buying, selling, trading, and collecting."
     />
 
-    <meta name="theme-color" content="#2A1E68" />
+    <meta
+      name="theme-color"
+      content="#2A1E68"
+    />
 
-    <title>BKTCG Show | Brooklyn Trading Card Show</title>
+    <title>
+      BKTCG Show | Brooklyn Trading Card Show
+    </title>
   </head>
 
   <body>
-    <!-- Hidden form for Netlify form detection -->
+    <!--
+      Hidden Contact Form
+      Used by Netlify to detect the React contact form
+    -->
     <form
       name="contact"
       data-netlify="true"
       hidden
     >
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="tel" name="phone" />
-      <input type="text" name="subject" />
+      <input
+        type="hidden"
+        name="form-name"
+        value="contact"
+      />
+
+      <input
+        type="text"
+        name="name"
+      />
+
+      <input
+        type="email"
+        name="email"
+      />
+
+      <input
+        type="tel"
+        name="phone"
+      />
+
+      <input
+        type="text"
+        name="subject"
+      />
+
+      <textarea name="message"></textarea>
+    </form>
+
+    <!--
+      Hidden Sponsor Interest Form
+      Used by Netlify to detect the React sponsor form
+    -->
+    <form
+      name="sponsor-interest"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input
+        type="hidden"
+        name="form-name"
+        value="sponsor-interest"
+      />
+
+      <input
+        name="bot-field"
+      />
+
+      <input
+        type="text"
+        name="business"
+      />
+
+      <input
+        type="text"
+        name="contact-name"
+      />
+
+      <input
+        type="email"
+        name="email"
+      />
+
+      <input
+        type="text"
+        name="website"
+      />
+
+      <select name="sponsorship-interest">
+        <option value="event">
+          Event Sponsorship
+        </option>
+
+        <option value="product">
+          Product / Prize Sponsorship
+        </option>
+
+        <option value="promotional">
+          Promotional Partnership
+        </option>
+
+        <option value="custom">
+          Custom Partnership
+        </option>
+
+        <option value="unsure">
+          Not Sure Yet
+        </option>
+      </select>
+
       <textarea name="message"></textarea>
     </form>
 
     <!-- React Application -->
     <div id="root"></div>
 
-    <script type="module" src="/src/main.jsx"></script>
+    <script
+      type="module"
+      src="/src/main.jsx"
+    ></script>
   </body>
 </html>

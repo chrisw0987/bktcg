@@ -4,9 +4,11 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Events from "./pages/Events";
+import Sponsors from "./pages/Sponsors";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
 import ThankYou from "./pages/ThankYou";
+import SponsorThankYou from "./pages/SponsorThankYou";
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/events" element={<Events/>} />
+        <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/sponsor-thank-you" element={<SponsorThankYou />} />
       </Routes>
 
       <Footer />

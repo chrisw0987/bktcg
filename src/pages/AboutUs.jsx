@@ -1,3 +1,5 @@
+import show10 from "../assets/show-10.jpg";
+
 function AboutUs() {
   const values = [
     {
@@ -25,27 +27,43 @@ function AboutUs() {
 
   return (
     <main className="bg-[#2A1E68] text-white">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B1D5A] via-[#2A1E68] to-[#5B2DB8] px-6 py-24 text-center">
+      {/* HERO */}
+      <section className="relative overflow-hidden px-6 py-28 text-center md:py-36">
+        {/* BACKGROUND IMAGE */}
+        <img
+          src={show10}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+
+        {/* DARK BLUE OVERLAY */}
+        <div className="absolute inset-0 bg-[#0B1D5A]/70" />
+
+        {/* PURPLE GRADIENT OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0B1D5A]/55 via-[#2A1E68]/45 to-[#5B2DB8]/55" />
+
+        {/* BLUE GLOW */}
         <div className="absolute left-1/2 top-0 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-[#4FCBFF]/20 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-4xl">
+        {/* HERO CONTENT */}
+        <div className="relative z-10 mx-auto max-w-4xl">
           <p className="font-bold uppercase tracking-widest text-[#4FCBFF]">
             About BKTCG Show
           </p>
 
-          <h1 className="mt-4 text-4xl font-black md:text-6xl">
+          <h1 className="mt-4 text-4xl font-black drop-shadow-lg md:text-6xl">
             Brooklyn&apos;s Trading Card Community
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/80">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/90 drop-shadow-md">
             BKTCG Show is a Brooklyn-based trading card event built around
             collecting, community, and bringing people in the hobby together.
           </p>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* MISSION */}
       <section className="bg-white px-6 py-20 text-[#2A1E68]">
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
           <div>
@@ -68,7 +86,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* VALUES */}
       <section className="bg-[#0B1D5A] px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
@@ -100,7 +118,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* What To Expect */}
+      {/* WHAT TO EXPECT */}
       <section className="bg-white px-6 py-20 text-[#2A1E68]">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
