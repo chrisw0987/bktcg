@@ -1,5 +1,6 @@
 import { useState } from "react";
 import events from "../data/events";
+import TreasureVenueMap from "../components/TreasureVenueMap";
 
 function Events() {
   const [activeTab, setActiveTab] = useState("upcoming");
@@ -140,9 +141,7 @@ function Events() {
                         {/* EVENT QUICK INFO */}
                         <div className="mt-8 grid gap-4 sm:grid-cols-2">
                           <div className="rounded-2xl bg-white p-5 shadow">
-                            <p className="font-black text-[#0B1D5A]">
-                              Date
-                            </p>
+                            <p className="font-black text-[#0B1D5A]">Date</p>
 
                             <p className="mt-1 text-[#2A1E68]/75">
                               {event.displayDate}
@@ -150,9 +149,7 @@ function Events() {
                           </div>
 
                           <div className="rounded-2xl bg-white p-5 shadow">
-                            <p className="font-black text-[#0B1D5A]">
-                              Time
-                            </p>
+                            <p className="font-black text-[#0B1D5A]">Time</p>
 
                             <p className="mt-1 text-[#2A1E68]/75">
                               {event.time}
@@ -160,9 +157,7 @@ function Events() {
                           </div>
 
                           <div className="rounded-2xl bg-white p-5 shadow">
-                            <p className="font-black text-[#0B1D5A]">
-                              Venue
-                            </p>
+                            <p className="font-black text-[#0B1D5A]">Venue</p>
 
                             <p className="mt-1 text-[#2A1E68]/75">
                               {event.location}
@@ -170,9 +165,7 @@ function Events() {
                           </div>
 
                           <div className="rounded-2xl bg-white p-5 shadow">
-                            <p className="font-black text-[#0B1D5A]">
-                              Address
-                            </p>
+                            <p className="font-black text-[#0B1D5A]">Address</p>
 
                             <p className="mt-1 text-[#2A1E68]/75">
                               {event.address}
@@ -209,9 +202,7 @@ function Events() {
                       {/* EVENT DETAILS CARD */}
                       <div className="rounded-3xl bg-gradient-to-br from-[#2A1E68] to-[#5B2DB8] p-8 text-white shadow-2xl">
                         <p className="font-bold uppercase tracking-widest text-[#4FCBFF]">
-                          {isUpcoming
-                            ? "Event Details"
-                            : "Show Highlights"}
+                          {isUpcoming ? "Event Details" : "Show Highlights"}
                         </p>
 
                         <div className="mt-6 space-y-5">
@@ -220,9 +211,7 @@ function Events() {
                               {event.venueSize}
                             </p>
 
-                            <p className="text-white/75">
-                              Event scale
-                            </p>
+                            <p className="text-white/75">Event scale</p>
                           </div>
 
                           <div>
@@ -231,9 +220,7 @@ function Events() {
                             </p>
 
                             <p className="text-white/75">
-                              {isUpcoming
-                                ? "Expected setup"
-                                : "Show setup"}
+                              {isUpcoming ? "Expected setup" : "Show setup"}
                             </p>
                           </div>
 
@@ -242,164 +229,186 @@ function Events() {
                               Main Focus
                             </p>
 
-                            <p className="mt-1 text-white/75">
-                              {event.focus}
-                            </p>
+                            <p className="mt-1 text-white/75">{event.focus}</p>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* DROPDOWNS */}
+                    {/* DROPDOWN BUTTONS */}
                     <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-                      {/* MORE INFO */}
+                      {/* MORE INFO BUTTON */}
                       <div className="h-fit rounded-2xl border border-[#2A1E68]/10 bg-white shadow">
                         <button
                           type="button"
-                          onClick={() =>
-                            toggleMoreInfo(event.id)
-                          }
+                          onClick={() => toggleMoreInfo(event.id)}
                           className="flex w-full items-center justify-between px-6 py-5 text-left font-black text-[#0B1D5A]"
                         >
                           <span>
-                            {isUpcoming
-                              ? "More Info"
-                              : "View Event"}
+                            {isUpcoming ? "More Info" : "View Event"}
                           </span>
 
                           <span className="text-[#FFA500]">
-                            {openMoreInfoId === event.id
-                              ? "▲"
-                              : "▼"}
+                            {openMoreInfoId === event.id ? "▲" : "▼"}
                           </span>
                         </button>
-
-                        {openMoreInfoId === event.id && (
-                          <div className="space-y-6 border-t border-[#2A1E68]/10 px-6 py-6">
-                            <div>
-                              <h3 className="font-black text-[#FFA500]">
-                                General Show Info
-                              </h3>
-
-                              <p className="mt-2 text-sm leading-relaxed text-[#2A1E68]/75">
-                                {event.description}
-                              </p>
-                            </div>
-
-                            <div>
-                              <h3 className="font-black text-[#FFA500]">
-                                Location
-                              </h3>
-
-                              <p className="mt-2 text-sm text-[#2A1E68]/75">
-                                {event.location}
-                                <br />
-                                {event.address}
-                              </p>
-
-                              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-                                <a
-                                  href={event.googleMaps}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="rounded-xl bg-[#2A1E68] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[#35267F]"
-                                >
-                                  Google Maps
-                                </a>
-
-                                <a
-                                  href={event.appleMaps}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="rounded-xl border border-[#2A1E68] px-4 py-2 text-center text-sm font-bold text-[#2A1E68] transition hover:bg-[#2A1E68] hover:text-white"
-                                >
-                                  Apple Maps
-                                </a>
-                              </div>
-                            </div>
-
-                            <div>
-                              <h3 className="font-black text-[#FFA500]">
-                                Show Hours
-                              </h3>
-
-                              <p className="mt-2 text-sm text-[#2A1E68]/75">
-                                {event.time}
-                              </p>
-                            </div>
-
-                            {event.ticketTypes?.length > 0 && (
-                              <div>
-                                <h3 className="font-black text-[#FFA500]">
-                                  Ticket Types
-                                </h3>
-
-                                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[#2A1E68]/75">
-                                  {event.ticketTypes.map(
-                                    (ticket) => (
-                                      <li key={ticket}>
-                                        {ticket}
-                                      </li>
-                                    )
-                                  )}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-                        )}
                       </div>
 
-                      {/* FLOORPLAN */}
+                      {/* FLOORPLAN BUTTON */}
                       <div className="h-fit rounded-2xl border border-[#2A1E68]/10 bg-white shadow">
                         <button
                           type="button"
-                          onClick={() =>
-                            toggleFloorplan(event.id)
-                          }
+                          onClick={() => toggleFloorplan(event.id)}
                           className="flex w-full items-center justify-between px-6 py-5 text-left font-black text-[#0B1D5A]"
                         >
-                          <span>Floorplan</span>
+                          <span>
+                            {event.treasureMap
+                              ? "Interactive Floorplan"
+                              : "Floorplan"}
+                          </span>
 
                           <span className="text-[#FFA500]">
-                            {openFloorplanId === event.id
-                              ? "▲"
-                              : "▼"}
+                            {openFloorplanId === event.id ? "▲" : "▼"}
                           </span>
                         </button>
+                      </div>
+                    </div>
 
-                        {openFloorplanId === event.id && (
-                          <div className="border-t border-[#2A1E68]/10 px-6 py-6">
-                            {event.floorplan ? (
-                              <>
-                                <p className="mb-4 text-sm text-[#2A1E68]/75">
-                                  View the vendor table layout for this
-                                  BKTCG Show.
-                                </p>
+                    {/* MORE INFO EXPANDED CONTENT */}
+                    {openMoreInfoId === event.id && (
+                      <div className="mt-6 rounded-2xl border border-[#2A1E68]/10 bg-white px-6 py-6 shadow">
+                        <div className="grid gap-8 md:grid-cols-2">
+                          <div>
+                            <h3 className="font-black text-[#FFA500]">
+                              General Show Info
+                            </h3>
 
-                                <div className="overflow-hidden rounded-2xl border border-[#4FCBFF]/20 bg-white shadow-lg">
-                                  <img
-                                    src={event.floorplan}
-                                    alt={`${event.title} floorplan`}
-                                    className="w-full object-contain"
-                                  />
-                                </div>
-                              </>
-                            ) : (
-                              <div className="py-6 text-center">
-                                <p className="font-black text-[#0B1D5A]">
-                                  Floorplan Coming Soon
-                                </p>
+                            <p className="mt-2 text-sm leading-relaxed text-[#2A1E68]/75">
+                              {event.description}
+                            </p>
+                          </div>
 
-                                <p className="mt-2 text-sm text-[#2A1E68]/65">
-                                  The vendor layout will be added once
-                                  it becomes available.
-                                </p>
-                              </div>
+                          <div>
+                            <h3 className="font-black text-[#FFA500]">
+                              Location
+                            </h3>
+
+                            <p className="mt-2 text-sm text-[#2A1E68]/75">
+                              {event.location}
+                              <br />
+                              {event.address}
+                            </p>
+
+                            <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                              <a
+                                href={event.googleMaps}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="rounded-xl bg-[#2A1E68] px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-[#35267F]"
+                              >
+                                Google Maps
+                              </a>
+
+                              <a
+                                href={event.appleMaps}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="rounded-xl border border-[#2A1E68] px-4 py-2 text-center text-sm font-bold text-[#2A1E68] transition hover:bg-[#2A1E68] hover:text-white"
+                              >
+                                Apple Maps
+                              </a>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h3 className="font-black text-[#FFA500]">
+                              Show Hours
+                            </h3>
+
+                            <p className="mt-2 text-sm text-[#2A1E68]/75">
+                              {event.time}
+                            </p>
+
+                            {event.generalAdmissionTime && (
+                              <p className="mt-2 text-sm text-[#2A1E68]/75">
+                                <span className="font-bold">
+                                  General Admission:
+                                </span>{" "}
+                                {event.generalAdmissionTime}
+                              </p>
                             )}
+
+                            {event.earlyBirdTime && (
+                              <p className="mt-1 text-sm text-[#2A1E68]/75">
+                                <span className="font-bold">Early Bird:</span>{" "}
+                                {event.earlyBirdTime}
+                              </p>
+                            )}
+                          </div>
+
+                          {event.ticketTypes?.length > 0 && (
+                            <div>
+                              <h3 className="font-black text-[#FFA500]">
+                                Ticket Types
+                              </h3>
+
+                              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[#2A1E68]/75">
+                                {event.ticketTypes.map((ticket) => (
+                                  <li key={ticket}>{ticket}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* FLOORPLAN EXPANDED CONTENT */}
+                    {openFloorplanId === event.id && (
+                      <div className="mt-6 rounded-2xl border border-[#2A1E68]/10 bg-white p-6 shadow">
+                        {event.treasureMap ? (
+                          <>
+                            <div className="mb-6">
+                              <p className="font-black text-[#0B1D5A]">
+                                Interactive Vendor Map
+                              </p>
+
+                              <p className="mt-2 text-sm leading-relaxed text-[#2A1E68]/65">
+                                Explore the BKTCG show floor and vendor table
+                                layout directly through Treasure.
+                              </p>
+                            </div>
+
+                            <TreasureVenueMap />
+                          </>
+                        ) : event.floorplan ? (
+                          <>
+                            <p className="mb-4 text-sm text-[#2A1E68]/75">
+                              View the vendor table layout for this BKTCG Show.
+                            </p>
+
+                            <div className="overflow-hidden rounded-2xl border border-[#4FCBFF]/20 bg-white shadow-lg">
+                              <img
+                                src={event.floorplan}
+                                alt={`${event.title} floorplan`}
+                                className="w-full object-contain"
+                              />
+                            </div>
+                          </>
+                        ) : (
+                          <div className="py-6 text-center">
+                            <p className="font-black text-[#0B1D5A]">
+                              Floorplan Coming Soon
+                            </p>
+
+                            <p className="mt-2 text-sm text-[#2A1E68]/65">
+                              The vendor layout will be added once it becomes
+                              available.
+                            </p>
                           </div>
                         )}
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               );

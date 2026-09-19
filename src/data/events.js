@@ -119,7 +119,7 @@ const events = [
   image:
     "https://www.ontreasure.com/_next/image?url=https%3A%2F%2Fqkdlfshzugzeqlznyqfv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fposters%2Fposters1788724164051&w=2048&q=75",
 
-  floorplan: "/brooklyn_show_floorplan_preview.jpg",
+  treasureMap: true,
 
   ticketLink:
     "https://www.ontreasure.com/events/octobers-bk-tcg-show-10252026/tickets",
